@@ -37,17 +37,17 @@ def load_from_excel(file_path: str) -> List[ModelSniker]:
     sneakers: list[ModelSniker] = []
     for index, row in data.iterrows():
         sneaker = ModelSniker(
-            brand=row['Бренд'],
-            model=row['Модель'],
-            color=row['Цвет'],
-            size=row['Размер'],
-            price=row['Цена'],
-            article=row['Артикул'],
-            condition=row['Состояние'],
-            city=row['Город'],
-            place=row['Местоположение'],
-            fitting=row['Примерка'],
-            vendor=row['Продавец']
+            brand=str(row['Бренд']).lower(),
+            model=str(row['Модель']).lower(),
+            color=str(row['Цвет']).lower(),
+            size=str(row['Размер']).lower(),
+            price=str(row['Цена']).lower(),
+            article=str(row['Артикул']).lower(),
+            condition=str(row['Состояние']).lower(),
+            city=str(row['Город']).lower(),
+            place=str(row['Местоположение']).lower(),
+            fitting=str(row['Примерка']).lower(),
+            vendor=str(row['Продавец'])
             )
         sneakers.append(sneaker)
 
